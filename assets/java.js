@@ -58,3 +58,20 @@ const d_text = document.getElementById('d_text')
 //submit button
 const submitBtn = document.getElementById('submit')
 
+let currentQuiz = 0
+let score = 0
+
+loadQuiz()
+//function to get quiz going
+function loadQuiz() {
+
+    const currentQuizData = quizData[currentQuiz]
+
+    //transfring data from javascript to html 
+    questionElement.innerText = currentQuizData.question
+    a_text.innerText = currentQuizData.a
+    b_text.innerText = currentQuizData.b
+    c_text.innerText = currentQuizData.c
+    d_text.innerText = currentQuizData.d
+}
+
