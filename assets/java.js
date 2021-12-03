@@ -43,3 +43,18 @@ const quizData = [
     },
 ];
 
+//creating variables and grabbing elements from html to work/edit in Javascript
+//quiz ID in Section
+const quiz = document.getElementById('quiz')
+//all .answer classes
+const answerElement = document.querySelectorAll('.answer')
+//question ID from h2 tag
+const questionElement = document.getElementById('question')
+//each answer element in the label tags
+const a_text = document.getElementById('a_text')
+const b_text = document.getElementById('b_text')
+const c_text = document.getElementById('c_text')
+const d_text = document.getElementById('d_text')
+//submit button
+const submitBtn = document.getElementById('submit')
+
