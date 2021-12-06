@@ -19,7 +19,7 @@ const quizData = [
     },
     {
         question: "Arrays in javascript can be used to store ______",
-        a: "NUmbers & Strings",
+        a: "Numbers & Strings",
         b: "Other arrays",
         c: "Booleans",
         d: "all of the above",
@@ -109,3 +109,34 @@ submitBtn.addEventListener('click', () => {
        }
     }
 })
+
+
+/*Tried to add the timer.
+wanted it to reset after each question answered
+if not answered it automatically goes to the next question*/
+var time = 30;
+numberCount = document.getElementById('count');
+submitButton = document.getElementById('submit');
+
+const interval = setInterval(()=>{
+    time--;
+    numberCount.innerHTML = time;
+    if (time === 0){
+        clearInterval(interval);
+    submitButton.click();
+    }
+    
+}, 1000)
+
+const resetTime = () => {
+    time = 30;
+    numberCount.innerHTML = time;
+    time--;
+}
+
+
+
+
+
+
+

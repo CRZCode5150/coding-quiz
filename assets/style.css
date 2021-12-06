@@ -57,3 +57,9 @@
     outline: none;
     background-color: #b427b9;
   }
+
+  #timer{
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+  }
