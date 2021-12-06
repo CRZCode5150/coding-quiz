@@ -75,3 +75,37 @@ function loadQuiz() {
     d_text.innerText = currentQuizData.d
 }
 
+
+//function to return the answer and loop through them 
+function selection(){
+    let answer
+    answerElement.forEach(answerElement => {
+        if(answerElement.checked){
+            answer = answerElement.id
+        }
+    })
+    return answer
+}
+
+
+//checking to see if answer is correct or not, then we return the score to the user at the end of the game
+submitBtn.addEventListener('click', () => {
+    const answer = selection()
+    if(answer) {
+       if(answer === quizData[currentQuiz].correct) {
+           score++
+       }
+
+       currentQuiz++
+
+       if(currentQuiz < quizData.length) {
+           loadQuiz()
+       } else {
+           quiz.innerHTML = `
+           <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+
+           <button onclick="location.reload()">Reload</button>
+           `
+       }
+    }
+})
